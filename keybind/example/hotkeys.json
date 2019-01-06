@@ -1,0 +1,14 @@
+[
+  {
+    "key": "Pause",
+    "signal": "sig-pause"
+  },
+  {
+    "key": "Control-Shift-j",
+    "signal": "sig-0"
+  },
+  {
+    "key": "Control-y",
+    "signal": "sig-1"
+  }
+]
