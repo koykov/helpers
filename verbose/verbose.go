@@ -23,8 +23,8 @@ const (
 	colorWarn   = 33
 	colorFail   = 31
 	colorDebug1 = 250
-	colorDebug2 = 90
-	colorDebug3 = 30
+	colorDebug2 = 2
+	colorDebug3 = 90
 
 	resetCode = "\033[0m"
 )
