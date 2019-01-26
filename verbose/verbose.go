@@ -58,42 +58,42 @@ func (v *Verbose) verbose(level VerbosityLevel, a ...interface{}) {
 
 // Print simple info message.
 func (v *Verbose) Info(a ...interface{}) {
-	v.verbose(LevelInfo, a)
+	v.verbose(LevelInfo, a...)
 }
 
 // Print OK message.
 func (v *Verbose) Ok(a ...interface{}) {
-	v.verbose(LevelOk, a)
+	v.verbose(LevelOk, a...)
 }
 
 // Print warning message.
 func (v *Verbose) Warning(a ...interface{}) {
-	v.verbose(LevelWarn, a)
+	v.verbose(LevelWarn, a...)
 }
 
 // Print fail message.
 func (v *Verbose) Fail(a ...interface{}) {
-	v.verbose(LevelFail, a)
+	v.verbose(LevelFail, a...)
 }
 
 // Print debug message (level 1).
 func (v *Verbose) Debug1(a ...interface{}) {
-	v.verbose(LevelDebug1, a)
+	v.verbose(LevelDebug1, a...)
 }
 
 // Print debug message (level 2).
 func (v *Verbose) Debug2(a ...interface{}) {
-	v.verbose(LevelDebug2, a)
+	v.verbose(LevelDebug2, a...)
 }
 
 // Print debug message (level 3).
 func (v *Verbose) Debug3(a ...interface{}) {
-	v.verbose(LevelDebug3, a)
+	v.verbose(LevelDebug3, a...)
 }
 
 // Prints a message according its verbosity level.
 func (v *Verbose) verbosef(format string, level VerbosityLevel, a ...interface{}) {
-	s := fmt.Sprintf(format, a)
+	s := fmt.Sprintf(format, a...)
 	v.verbose(level, s)
 }
 
