@@ -92,42 +92,42 @@ func (v *Verbose) Debug3(a ...interface{}) {
 }
 
 // Prints a message according its verbosity level.
-func (v *Verbose) verbosef(format string, level VerbosityLevel, a ...interface{}) {
+func (v *Verbose) verbosef(level VerbosityLevel, format string, a ...interface{}) {
 	s := fmt.Sprintf(format, a...)
 	v.verbose(level, s)
 }
 
 // Info with formatting support.
 func (v *Verbose) Infof(format string, a ...interface{}) {
-	v.verbosef(format, LevelInfo, a)
+	v.verbosef(LevelInfo, format, a...)
 }
 
 // Ok() with formatting support.
 func (v *Verbose) Okf(format string, a ...interface{}) {
-	v.verbosef(format, LevelOk, a)
+	v.verbosef(LevelOk, format, a...)
 }
 
 // Warning() with formatting support.
 func (v *Verbose) Warningf(format string, a ...interface{}) {
-	v.verbosef(format, LevelWarn, a)
+	v.verbosef(LevelWarn, format, a...)
 }
 
 // Fail() with formatting support.
 func (v *Verbose) Failf(format string, a ...interface{}) {
-	v.verbosef(format, LevelFail, a)
+	v.verbosef(LevelFail, format, a...)
 }
 
 // Debug1() with formatting support.
 func (v *Verbose) Debug1f(format string, a ...interface{}) {
-	v.verbosef(format, LevelDebug1, a)
+	v.verbosef(LevelDebug1, format, a...)
 }
 
 // Debug2() with formatting support.
 func (v *Verbose) Debug2f(format string, a ...interface{}) {
-	v.verbosef(format, LevelDebug2, a)
+	v.verbosef(LevelDebug2, format, a...)
 }
 
 // Debug3() with formatting support.
 func (v *Verbose) Debug3f(format string, a ...interface{}) {
-	v.verbosef(format, LevelDebug3, a)
+	v.verbosef(LevelDebug3, format, a...)
 }
