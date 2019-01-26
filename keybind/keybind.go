@@ -12,7 +12,7 @@ import (
 
 // Interface of receiver of key events.
 type KeyCatcher interface {
-	Catch(signal string)
+	Catch(signal string) error
 }
 
 // The hotkey structure.
@@ -20,7 +20,7 @@ type Hotkey struct {
 	// One or combination of some keysymdefs. See all possible keys here
 	// https://github.com/BurntSushi/xgbutil/blob/master/keybind/keysymdef.go
 	// Please note, some of combination doesn't work, eg: Control-Alt-x, ...
-	Key    string `json:"key"`
+	Key string `json:"key"`
 	// Signal key that will be sent to receiver. May be a random string.
 	Signal string `json:"signal"`
 }
@@ -78,7 +78,7 @@ func (kb *Keybind) Init() (err error) {
 		go func(kb *Keybind, hk *Hotkey, err *error) {
 			cb0 := keybind.KeyPressFun(
 				func(X *xgbutil.XUtil, e xevent.KeyPressEvent) {
-					kb.catcher.Catch(hk.Signal)
+					_ = kb.catcher.Catch(hk.Signal)
 				})
 			*err = cb0.Connect(kb.xu, kb.xu.RootWin(), hk.Key, true)
 		}(kb, hk, &err)

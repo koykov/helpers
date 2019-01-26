@@ -13,8 +13,9 @@ import (
 type ExampleCatch struct{}
 
 // Just display the signal when it catch.
-func (c ExampleCatch) Catch(signal string) {
+func (c ExampleCatch) Catch(signal string) error {
 	fmt.Println("caught signal:", signal)
+	return nil
 }
 
 func main() {
